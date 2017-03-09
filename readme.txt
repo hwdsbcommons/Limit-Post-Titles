@@ -3,8 +3,8 @@ Contributors: steve228uk
 Donate link: http://stephenradford.me/restricting-post-titles-in-wordpress-with-a-character-limit
 Tags: posts, titles, custom post types, limit, limiter, cms, character, dashboard
 Requires at least: 3.0.1
-Tested up to: 4.1.1
-Stable tag: 1.0
+Tested up to: 4.2.2
+Stable tag: 1.0.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -44,6 +44,9 @@ The plugin only limits within the dashboard. Posts added before the plugin was a
 2. Limit count on the post title
 
 == Changelog ==
+
+= 1.0.1 =
+* Added RTL language support
 
 = 1.0 =
 * We made it to 1.0!

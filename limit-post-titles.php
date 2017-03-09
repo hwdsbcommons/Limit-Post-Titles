@@ -3,7 +3,7 @@
 Plugin Name:          Limit Post Titles
 Plugin URI:           http://stephenradford.me/restricting-post-titles-in-wordpress-with-a-character-limit
 Description:          Limit post titles using JS in the dashboard
-Version:              1.0.0
+Version:              1.0.2
 Author:               Cocoon Development Ltd
 Author URI:           http://wearecocoon.co.uk
 */
@@ -43,7 +43,11 @@ class SR_Limit_Post_Titles {
 		$p = get_current_screen();
 		if(is_admin() && isset($this->options['post_types'][$p->post_type]) && isset($this->options['limit']) && $this->options['limit'] > 0)
 		{
-			wp_register_style('limit-post-titles-style', plugin_dir_url(__FILE__).'limit-post-titles.css', false, '1.0.0');
+			if(is_rtl()) {
+				wp_register_style('limit-post-titles-style', plugin_dir_url(__FILE__).'limit-post-titles-rtl.css', false, '1.0.1');
+			} else {
+				wp_register_style('limit-post-titles-style', plugin_dir_url(__FILE__).'limit-post-titles.css', false, '1.0.1');
+			}
 			wp_enqueue_style('limit-post-titles-style');
 			wp_enqueue_script('limit-post-titles', plugin_dir_url(__FILE__).'limit-post-titles.min.js');
 			wp_localize_script('limit-post-titles', 'sr_post_titles', array(
